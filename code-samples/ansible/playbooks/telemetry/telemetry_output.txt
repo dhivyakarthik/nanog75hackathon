@@ -1,0 +1,30 @@
+
+
+
+tesuto@dev1:~/code-samples/ansible$ ansible-playbook -i ansible_hosts playbooks/telemetry/telemetry_docker_bringup.yml
+
+PLAY [dev1] ****************************************************************************************************************************************************************
+
+TASK [Gathering Facts] *****************************************************************************************************************************************************
+ok: [dev1]
+
+TASK [check if docker present] *********************************************************************************************************************************************
+changed: [dev1]
+
+TASK [run telemetry container] *********************************************************************************************************************************************
+changed: [dev1]
+
+TASK [debug] ***************************************************************************************************************************************************************
+ok: [dev1] => {
+    "output.stdout_lines": "VARIABLE IS NOT DEFINED!"
+}
+
+PLAY RECAP *****************************************************************************************************************************************************************
+dev1                       : ok=4    changed=2    unreachable=0    failed=0   
+
+tesuto@dev1:~/code-samples/ansible$ docker ps -l
+CONTAINER ID        IMAGE                        COMMAND                  CREATED             STATUS              PORTS               NAMES
+7a61e6242379        akshshar/nanog75-telemetry   "/bin/bash -c 'pythoâ¦"   14 seconds ago      Up 12 seconds                           dhivya
+tesuto@dev1:~/code-samples/ansible$ e
+
+

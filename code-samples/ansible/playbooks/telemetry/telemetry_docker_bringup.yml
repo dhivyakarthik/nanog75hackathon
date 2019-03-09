@@ -1,0 +1,23 @@
+---
+- hosts: dev1
+  become: true
+
+  tasks:
+
+    - name: check if docker present
+      pip: 
+         name: docker
+         state: present
+    - name: run telemetry container
+      docker_container:
+        name: dhivya
+        #state: started
+        volumes: 
+           - "/home/tesuto/code-samples/telemetry/telemetry.py:/root/telemetry.py"
+        image: "akshshar/nanog75-telemetry"
+        command: /bin/bash -c "python3 /root/telemetry.py"
+        #args:
+        #  executable: /bin/bash -c "python3 /root/telemetry.py"
+        #  register: output
+        #  ignore_errors: yes
+    - debug: var=output.stdout_lines
