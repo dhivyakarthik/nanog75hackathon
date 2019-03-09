@@ -1,7 +1,0 @@
----
-
-- import_playbook: playbooks/config_bgp/config_oc_bgp_ydk.yml
-- import_playbook: playbooks/openr_bringup/docker_bringup.yml
-- import_playbook: playbooks/telemetry/telemetry_docker_bringup.yml
-- import_playbook: playbooks/reachability_check/ip_dest_reachable_ydk.yml
-
